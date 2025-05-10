@@ -1,0 +1,19 @@
+import matplotlib.pyplot as plt
+
+os_names = ['Windows', 'OS X', 'Unknown', 'Linux', 'Chrome OS', 'FreeBSD']
+market_shares = [72.52, 14.68, 6.47, 4.05, 2.27, 0.01]
+
+plt.figure(figsize=(10, 6))
+bars = plt.bar(os_names, market_shares, color='skyblue', edgecolor='black')
+
+for bar in bars:
+    height = bar.get_height()
+    plt.text(bar.get_x() + bar.get_width() / 2.0, height, f'{height}%', ha='center', va='bottom')
+
+plt.title('Operating System Market Share Worldwide (2024)', fontsize=14)
+plt.xlabel('Operating System', fontsize=12)
+plt.ylabel('Market Share (%)', fontsize=12)
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+
+plt.tight_layout()
+plt.show()
